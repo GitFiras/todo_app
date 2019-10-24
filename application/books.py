@@ -16,7 +16,7 @@ def create_book():
 
     db.session.add(book)
     db.session.commit()
-    return jsonify(), 200
+    return jsonify(book.to_dict()), 200
 
 
 @BookApi.route('/<name>')

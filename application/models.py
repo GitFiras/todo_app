@@ -15,11 +15,11 @@ class Book(db.Model):
 
     @staticmethod
     def from_dict(dict):
-        return Book(name=dict['name'])
+        return Book(id=dict.get('id'), name=dict['name'])
 
     def to_dict(self):
        """Return object data in easily serializable format"""
        return {
-           'id'         : self.id,
+           'id'  : self.id,
            'name': self.name,
        }
